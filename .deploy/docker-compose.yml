@@ -1,0 +1,9 @@
+version: '3'
+services:
+  spring:
+    container_name: economictermassistant
+    image: hansolyoon/economictermassistant
+    expose:
+      - 8080
+    ports:
+      - 80:8080
