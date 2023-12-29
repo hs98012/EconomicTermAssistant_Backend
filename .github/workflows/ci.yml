@@ -27,7 +27,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'Oracle'
+        distribution: 'oracle'
 
     - name: Gradle Caching
       uses: actions/cache@v3
