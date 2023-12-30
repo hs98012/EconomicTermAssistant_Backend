@@ -50,16 +50,18 @@ jobs:
       - name: Build With Gradle
         run: ./gradlew build -x test
         
-      - name: Check Docker & Docker Compose
+      - name: Install Docker
         run: |
-          docker --version
-          docker-compose --version
-          
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
+          sudo usermod -aG docker $USER
+          newgrp docker 
+      
       - name: Install Docker Compose
         run: |
           sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
           sudo chmod +x /usr/local/bin/docker-compose
-        
+
       - name: Docker build & Push
         env:
           DOCKER_PATH : .deploy/Dockerfile
