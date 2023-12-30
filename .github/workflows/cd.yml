@@ -50,6 +50,12 @@ jobs:
       - name: Build With Gradle
         run: ./gradlew build -x test
         
+      - name: Check Docker & Docker Compose
+        run: |
+          docker --version
+          docker-compose --version
+
+        
       - name: Docker build & Push
         env:
           DOCKER_PATH : .deploy/Dockerfile
