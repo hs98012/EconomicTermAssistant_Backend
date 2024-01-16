@@ -21,8 +21,13 @@ public class EconomicWordQueryService {
     }
 
     public List<EconomicWord> findAllEconomicWord() {
-        List<EconomicWord> economicWord = economicWordRepository.findAll();
-        return economicWord;
+        List<EconomicWord> economicWords = economicWordRepository.findAll();
+        return economicWords;
+    }
+
+    public List<EconomicWord> findByWordStartingWith(String economicPrefix) {
+        List<EconomicWord> economicWords = economicWordRepository.findByWordStartingWith(economicPrefix);
+        return economicWords;
     }
 
 }
