@@ -34,4 +34,9 @@ public class EconomicWordGetService {
         }).toList();
         return economicWordInfoResponseList;
     }
+
+    public List<EconomicWordResponse.EconomicWordInfoResponse> getEconomicWordInfoResponseByPrefix(String economicPrefix) {
+        List<EconomicWord> economicWord = economicWordQueryService.findByWordStartingWith(economicPrefix);
+        return getEconomicWordInfoResponses(economicWord);
+    }
 }

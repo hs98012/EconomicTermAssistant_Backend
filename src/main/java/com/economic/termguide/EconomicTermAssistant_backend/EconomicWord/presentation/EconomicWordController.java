@@ -24,4 +24,9 @@ public class EconomicWordController {
     public EconomicWordResponse.EconomicWordInfoResponse getEconomicWord(@PathVariable Long economicWordId) {
         return economicWordGetService.getEconomicWord(economicWordId);
     }
+
+    @GetMapping("/economicWord/list/{economicPrefix}")
+    public List<EconomicWordResponse.EconomicWordInfoResponse> getEconomicWordInfoResponseByPrefix(@PathVariable String economicPrefix) {
+        return economicWordGetService.getEconomicWordInfoResponseByPrefix(economicPrefix);
+    }
 }
