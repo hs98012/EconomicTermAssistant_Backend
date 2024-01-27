@@ -1,8 +1,8 @@
 version: '3'
 services:
   spring:
-    container_name: economictermassistant
-    image: hansolyoon/economictermassistant
+    container_name: tender_mclean
+    image: hansolyoon/economictermassistant:1.0.0
     expose:
       - 8080
     ports:
