@@ -1,6 +1,7 @@
 package com.economic.termguide.EconomicTermAssistant_backend.bookmark.domain.entity;
 
 import com.economic.termguide.EconomicTermAssistant_backend.EconomicWord.domain.entity.EconomicWord;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,10 +17,12 @@ public class Bookmark {
 
     @Id
     @Column(name = "bookmark_id")
+    @Schema(description = "북마크 id")
     private String uuid;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "economic_word_id")
+    @Schema(description = "경제용어")
     private EconomicWord economicWord;
 
     @Builder
