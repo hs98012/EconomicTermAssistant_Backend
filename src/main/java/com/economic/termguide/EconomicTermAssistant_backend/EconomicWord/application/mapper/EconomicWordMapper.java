@@ -14,6 +14,7 @@ public class EconomicWordMapper {
                 .theme(economicWord.getTheme())
                 .word(economicWord.getWord())
                 .explanation(economicWord.getExplanation())
+                .id(economicWord.getId())
                 .build();
     }
 
