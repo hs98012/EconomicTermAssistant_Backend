@@ -38,4 +38,14 @@ public class BookmarkController {
     public List<BookmarkResponse.BookmarkInfoResponse> getBookmark(@PathVariable String uuid) {
         return bookmarkGetService.getBookmark(uuid);
     }
+    @Operation(summary = "북마크 삭제", tags = {"BookmarkController"})
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "북마크 삭제 성공"),
+            @ApiResponse(responseCode = "404", description = "북마크 삭제 실패")
+    })
+    @PostMapping("/bookmark/delete")
+    public void deleteBookmark(@RequestBody BookmarkRequest.BookmarkCreateRequest bookmarkCreateRequest) {
+        bookmarkCreateService.deleteBookmark(bookmarkCreateRequest);
+    }
+
 }

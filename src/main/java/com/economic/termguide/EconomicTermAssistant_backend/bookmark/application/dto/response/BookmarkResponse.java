@@ -12,10 +12,12 @@ public class BookmarkResponse {
     public static class BookmarkInfoResponse {
         @Schema(description = "경제용어 id")
         private Long economicWordId;
-
+        @Schema(description = "북마크 여부")
+        private boolean isBookmarked;
         @Builder
-        public BookmarkInfoResponse(Long economicWordId) {
+        public BookmarkInfoResponse(Long economicWordId, boolean isBookmarked) {
             this.economicWordId = economicWordId;
+            this.isBookmarked = isBookmarked;
         }
     }
 

@@ -38,6 +38,8 @@ public class BookmarkCreateService {
 
         if(b) {
             bookmarkdeleteService.deleteBookmark(uuid, economicWordId);
+        } else {
+            throw new IllegalArgumentException("북마크가 존재하지 않습니다.");
         }
     }
 

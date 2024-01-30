@@ -18,6 +18,7 @@ public class BookmarkMapper {
     public static BookmarkResponse.BookmarkInfoResponse mapToBookmarkInfoResponse(Bookmark bookmark) {
         return BookmarkResponse.BookmarkInfoResponse.builder()
                 .economicWordId(bookmark.getEconomicWord().getId())
+                .isBookmarked(true)
                 .build();
     }
 
