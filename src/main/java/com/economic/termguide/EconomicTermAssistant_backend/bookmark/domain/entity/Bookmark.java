@@ -16,8 +16,13 @@ import static lombok.AccessLevel.PROTECTED;
 public class Bookmark {
 
     @Id
+    @GeneratedValue(strategy = IDENTITY)
     @Column(name = "bookmark_id")
     @Schema(description = "북마크 id")
+    private Long bookmarkId;
+
+    @Column(name = "uuid")
+    @Schema(description = "UUID")
     private String uuid;
 
     @ManyToOne(fetch = FetchType.LAZY)
