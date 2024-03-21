@@ -50,5 +50,12 @@ public class SwaggerConfig {
                 .build();
     }
 
-
+    @Bean
+    public GroupedOpenApi naverNewsOpenAPI() {
+        String[] paths = {"/naverNews/**"};
+        return GroupedOpenApi.builder()
+                .group("naver News API")
+                .pathsToMatch(paths)
+                .build();
+    }
 }
