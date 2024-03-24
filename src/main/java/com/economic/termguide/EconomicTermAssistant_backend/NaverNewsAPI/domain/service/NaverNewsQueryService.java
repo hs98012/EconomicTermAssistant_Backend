@@ -119,7 +119,11 @@ public class NaverNewsQueryService {
                 Element ogImage = doc.select("meta[property=og:image]").first();
                 if (ogImage != null) {
                     imageUrl = ogImage.attr("content");
+                    if (!imageUrl.startsWith("https:")) {
+                        imageUrl = "https://" + imageUrl;
+                    }
                     System.out.println(imageUrl);
+
                 } else {
                     System.out.println("썸네일 이미지를 찾을 수 없습니다.");
                 }
