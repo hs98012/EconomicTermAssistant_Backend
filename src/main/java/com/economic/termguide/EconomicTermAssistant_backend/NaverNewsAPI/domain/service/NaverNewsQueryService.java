@@ -122,8 +122,9 @@ public class NaverNewsQueryService {
                     if (!imageUrl.startsWith("https:")) {
                         imageUrl = "https://" + imageUrl;
                     }
-                    System.out.println(imageUrl);
-
+                    if(imageUrl.contains("https://http://")){
+                        imageUrl = imageUrl.replace("https://http://", "https://");
+                    }
                 } else {
                     System.out.println("썸네일 이미지를 찾을 수 없습니다.");
                 }
@@ -135,3 +136,4 @@ public class NaverNewsQueryService {
         return imageUrls;
     }
 }
+
